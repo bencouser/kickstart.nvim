@@ -11,3 +11,16 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Copy to Clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- move things up and down in visual
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- disable ex mode
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- shout out
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)

@@ -158,15 +158,16 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'rose-pine/neovim',
+    name = 'rose-pine',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 
   {
-    -- Set lualine as statusline
+    -- Set lualine as statusline [[NEEDED?]]
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {

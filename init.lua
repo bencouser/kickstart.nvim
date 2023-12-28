@@ -1,13 +1,4 @@
---[[
-
---[[
-
-  https://learnxinyminutes.com/docs/lua/
-
---]]
-
 -- Set <space> as the leader key
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -157,16 +148,6 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'rose-pine'
-    end,
-  },
-
-  {
     -- Set lualine as statusline [[NEEDED?]]
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -228,7 +209,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autoformat',
   require 'kickstart.plugins.debug',
   require 'custom.plugins.harpoon',
-  --require 'custom.plugins.tree',
+  require 'custom.plugins.rose-pine',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping

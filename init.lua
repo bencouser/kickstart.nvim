@@ -428,15 +428,15 @@ vim.defer_fn(function()
           ['[]'] = 'Treesitter: @class.outer',
         },
       },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>a'] = 'Treesitter: @parameter.inner',
-        },
-        swap_previous = {
-          ['<leader>A'] = 'Treesitter: @parameter.inner',
-        },
-      },
+      -- swap = {
+      --   enable = true,
+      --   swap_next = {
+      --     ['<leader>a'] = 'Treesitter: @parameter.inner',
+      --   },
+      --   swap_previous = {
+      --     ['<leader>A'] = 'Treesitter: @parameter.inner',
+      --   },
+      -- },
     },
   }
 end, 0)

@@ -311,72 +311,72 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
-vim.defer_fn(function()
-  require('nvim-treesitter.configs').setup {
-    -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'c_sharp', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
-
-    -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
-
-    highlight = { enable = true },
-    indent = { enable = true },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = '<c-space>',
-        node_incremental = '<c-space>',
-        scope_incremental = '<c-s>',
-        node_decremental = '<M-space>',
-      },
-    },
-    textobjects = {
-      select = {
-        enable = true,
-        lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-        keymaps = {
-          -- You can use the capture groups defined in textobjects.scm
-          ['aa'] = '@parameter.outer',
-          ['ia'] = '@parameter.inner',
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = '@class.inner',
-        },
-      },
-      move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = {
-          [']m'] = 'Treesitter: @function.outer',
-          [']]'] = 'Treesitter: @class.outer',
-        },
-        goto_next_end = {
-          [']M'] = 'Treesitter: @function.outer',
-          [']['] = 'Treesitter: @class.outer',
-        },
-        goto_previous_start = {
-          ['[m'] = 'Treesitter: @function.outer',
-          ['[['] = 'Treesitter: @class.outer',
-        },
-        goto_previous_end = {
-          ['[M'] = 'Treesitter: @function.outer',
-          ['[]'] = 'Treesitter: @class.outer',
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>a'] = 'Treesitter: @parameter.inner',
-        },
-        swap_previous = {
-          ['<leader>A'] = 'Treesitter: @parameter.inner',
-        },
-      },
-    },
-  }
-end, 0)
-
+-- vim.defer_fn(function()
+--   require('nvim-treesitter.configs').setup {
+--     -- Add languages to be installed here that you want installed for treesitter
+--     ensure_installed = { 'c', 'c_sharp', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+--
+--     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+--     auto_install = false,
+--
+--     highlight = { enable = true },
+--     indent = { enable = true },
+--     incremental_selection = {
+--       enable = true,
+--       keymaps = {
+--         init_selection = '<c-space>',
+--         node_incremental = '<c-space>',
+--         scope_incremental = '<c-s>',
+--         node_decremental = '<M-space>',
+--       },
+--     },
+--     textobjects = {
+--       select = {
+--         enable = true,
+--         lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+--         keymaps = {
+--           -- You can use the capture groups defined in textobjects.scm
+--           ['aa'] = '@parameter.outer',
+--           ['ia'] = '@parameter.inner',
+--           ['af'] = '@function.outer',
+--           ['if'] = '@function.inner',
+--           ['ac'] = '@class.outer',
+--           ['ic'] = '@class.inner',
+--         },
+--       },
+--       move = {
+--         enable = true,
+--         set_jumps = true, -- whether to set jumps in the jumplist
+--         goto_next_start = {
+--           [']m'] = 'Treesitter: @function.outer',
+--           [']]'] = 'Treesitter: @class.outer',
+--         },
+--         goto_next_end = {
+--           [']M'] = 'Treesitter: @function.outer',
+--           [']['] = 'Treesitter: @class.outer',
+--         },
+--         goto_previous_start = {
+--           ['[m'] = 'Treesitter: @function.outer',
+--           ['[['] = 'Treesitter: @class.outer',
+--         },
+--         goto_previous_end = {
+--           ['[M'] = 'Treesitter: @function.outer',
+--           ['[]'] = 'Treesitter: @class.outer',
+--         },
+--       },
+--       swap = {
+--         enable = true,
+--         swap_next = {
+--           ['<leader>a'] = 'Treesitter: @parameter.inner',
+--         },
+--         swap_previous = {
+--           ['<leader>A'] = 'Treesitter: @parameter.inner',
+--         },
+--       },
+--     },
+--   }
+-- end, 0)
+--
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -465,7 +465,7 @@ require('mason-lspconfig').setup()
 require 'lspconfig'.mojo.setup {}
 
 local servers = {
-  -- mojo = { "mojo" },
+  -- mojo = { "mojo" },mojo
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
@@ -567,19 +567,19 @@ cmp.setup {
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
-    },
-  },
-}
-
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+-- require('telescope').setup {
+--   defaults = {
+--     mappings = {
+--       i = {
+--         ['<C-u>'] = false,
+--         ['<C-d>'] = false,
+--       },
+--     },
+--   },
+-- }
+--
+-- -- Enable telescope fzf native, if installed
+-- pcall(require('telescope').load_extension, 'fzf')
 --
 -- -- Telescope live_grep in git root
 -- -- Function to find the git root directory based on the current buffer's path

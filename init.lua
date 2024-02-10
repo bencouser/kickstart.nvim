@@ -207,6 +207,7 @@ require('lazy').setup({
   require 'custom.plugins.harpoon',
   require 'custom.plugins.rose-pine',
   require 'custom.plugins.copilot',
+  require 'custom.plugins.mojo_lsp',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
